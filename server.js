@@ -48,18 +48,18 @@ app.get('*', (req, res) => {
 });
 
 
-var foo = function(){
+var foo = function () {
     var userInput;
 
     userInput = "addition";
-console.log(userInput);
+    console.log(userInput);
 
-    if (userInput === "multiply"){
-        operation = "multiply";
+    if (userInput === "multiply") {
+        operation = "peter";
     }
 
-    if (userInput === "addition"){
-        operation = "addition";
+    if (userInput === "addition") {
+        operation = "ganz";
     }
 
 
@@ -70,25 +70,34 @@ console.log(userInput);
         action: operation,
         keys: "max_temp"
     };
-    
+
     let fs = require('fs'),
-    jsonData = JSON.stringify(obj);
-    
-    fs.writeFile("sample.json", jsonData, function(err)
-    
-    {
-    
-        if (err){
+        jsonData = JSON.stringify(obj);
+
+    fs.writeFile("sample.json", jsonData, function (err) {
+
+        if (err) {
             console.log(err);
         }
     });
 
 }
-app.post('/', function(req, res) {
-  console.log(req.body);
-  res.send(200);
-  foo();
+app.post('/todo', function (req, res) {
+    console.log(req.body);
+    res.send(200);
+   foo();
+  
 });
+
+app.post('/todoro', function (req, res) {
+    console.log(req.body);
+    res.send(200);
+   foo();
+  
+});
+
+
+
 // Configure our server to listen on the port defiend by our port variable
 app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
 
