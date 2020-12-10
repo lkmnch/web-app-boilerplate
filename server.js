@@ -47,5 +47,43 @@ app.get('*', (req, res) => {
     });
 });
 
+
+var foo = function(){
+    var userInput;
+
+userInput = "multiply";
+console.log(userInput);
+
+    if (userInput === "multiply"){
+        operation = "multiply";
+    }
+
+    console.log(operation);
+
+    let obj = {
+        type: "calculate",
+        action: operation,
+        keys: "max_temp"
+    };
+    
+    let fs = require('fs'),
+    jsonData = JSON.stringify(obj);
+    
+    fs.writeFile("sample.json", jsonData, function(err)
+    
+    {
+    
+        if (err){
+            console.log(err);
+        }
+    });
+
+}
+app.post('/', function(req, res) {
+  console.log(req.body);
+  res.send(200);
+  foo();
+});
 // Configure our server to listen on the port defiend by our port variable
 app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
+
