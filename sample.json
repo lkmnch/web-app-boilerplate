@@ -1,1 +1,1 @@
-{"type":"calculate","action":"multiply","keys":"max_temp"}
+{"type":"calculate","action":"addition","keys":"max_temp"}

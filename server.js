@@ -51,12 +51,17 @@ app.get('*', (req, res) => {
 var foo = function(){
     var userInput;
 
-userInput = "multiply";
+    userInput = "addition";
 console.log(userInput);
 
     if (userInput === "multiply"){
         operation = "multiply";
     }
+
+    if (userInput === "addition"){
+        operation = "addition";
+    }
+
 
     console.log(operation);
 
