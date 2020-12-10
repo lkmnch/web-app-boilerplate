@@ -48,18 +48,46 @@ app.get('*', (req, res) => {
 });
 
 
-var foo = function () {
-    var userInput;
+var multi = function(){
+    userInput = "multiply";
+    console.log(userInput);
+}
 
+var addition = function(){
     userInput = "addition";
     console.log(userInput);
+}
 
+var division = function(){
+    userInput = "division";
+    console.log(userInput);
+}
+
+var substraction = function(){
+    userInput = "substraction";
+    console.log(userInput);
+}
+//--------------------------------------
+
+
+
+
+var operationJSON = function () {
+  
     if (userInput === "multiply") {
-        operation = "peter";
+        operation = "multiply";
     }
 
     if (userInput === "addition") {
-        operation = "ganz";
+        operation = "addition";
+    }
+
+    if (userInput === "substraction") {
+        operation = "substraction";
+    }
+
+    if (userInput === "division") {
+        operation = "division";
     }
 
 
@@ -82,17 +110,40 @@ var foo = function () {
     });
 
 }
-app.post('/todo', function (req, res) {
+
+//_____________________________________________________
+app.post('/multi', function (req, res) {
     console.log(req.body);
     res.send(200);
-   foo();
+   multi();
   
 });
 
-app.post('/todoro', function (req, res) {
+app.post('/addition', function (req, res) {
     console.log(req.body);
     res.send(200);
-   foo();
+    addition();
+});
+
+app.post('/division', function (req, res) {
+    console.log(req.body);
+    res.send(200);
+    division();
+});
+
+app.post('/substraction', function (req, res) {
+    console.log(req.body);
+    res.send(200);
+    substraction();
+});
+
+
+
+
+app.post('/operationJson', function (req, res) {
+    console.log(req.body);
+    res.send(200);
+    operationJSON();
   
 });
 
